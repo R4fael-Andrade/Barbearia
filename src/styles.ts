@@ -9,3 +9,9 @@ export const GlobalCss = createGlobalStyle`
         list-style: none;
 }
 `
+
+export const cores = {
+    yellow: '#B8952E',
+    gray: '#F5F4F5',
+    dark: '#19181B'
+}
