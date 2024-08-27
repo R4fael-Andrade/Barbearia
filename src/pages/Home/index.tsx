@@ -1,6 +1,8 @@
+import Agenda from "../../components/Agenda"
+
 const Home = () => {
     return (
-
+        <Agenda />
     )
 }
 
