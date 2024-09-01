@@ -1,23 +1,33 @@
 import TimeButton from "../../components/time-button/time-button";
-import { HeaderContainer, Header, Title, Descricao, FormContainer,
-     DataWrapper, TimeWrapper } from "./style";
+import { AsideContainer, Header, Title, Descricao, FormContainer,
+     DataWrapper, TimeWrapper, 
+     NameWrapper,
+     NameContainer,
+     UserIcon,
+     SendBtn,
+     Logo} from "./style";
 import Horarios from "../../utilites/horarios";
 
 const Home = () => {
     return (
-        <HeaderContainer>
+        <AsideContainer>
+            <Logo>
+                <p>Barbearia</p>
+                <span></span>
+            </Logo>
             <Header>
                 <Title>Agende um atendimento</Title>
                 <Descricao>Selecione data, horário e informe o nome para criar o agendamento</Descricao>
             </Header>
+            
             <FormContainer>
                 <DataWrapper>
-                <fieldset>Data</fieldset>
+                    Data
                 <input type="date"/>
                 </DataWrapper>
 
                 <TimeWrapper>
-                    <fieldset>Horários</fieldset>
+                    Horários
                     <label>Manhã</label>
                     <div>
                     <TimeButton time={Horarios.NineAM}>{Horarios.NineAM}</TimeButton>
@@ -26,32 +36,34 @@ const Home = () => {
                     <TimeButton time={Horarios.TwelveAM}>{Horarios.TwelveAM}</TimeButton>
                     </div>
 
-                </TimeWrapper>
-                <TimeWrapper>
-
                     <label>Tarde</label>
                     <div>
-                    <TimeButton time={Horarios.NineAM}>{Horarios.NineAM}</TimeButton>
-                    <TimeButton time={Horarios.TenAM}>{Horarios.TenAM}</TimeButton>
-                    <TimeButton time={Horarios.ElevenAM}>{Horarios.ElevenAM}</TimeButton>
-                    <TimeButton time={Horarios.TwelveAM}>{Horarios.TwelveAM}</TimeButton>
+                    <TimeButton time={Horarios.OnePM}>{Horarios.OnePM}</TimeButton>
+                    <TimeButton time={Horarios.TwoPM}>{Horarios.TwoPM}</TimeButton>
+                    <TimeButton time={Horarios.ThreePM}>{Horarios.ThreePM}</TimeButton>
+                    <TimeButton time={Horarios.FourPM}>{Horarios.FourPM}</TimeButton>
                     </div>
-
-                </TimeWrapper>
-
-                <TimeWrapper>
                     
                     <label>Noite</label>
                     <div>
-                    <TimeButton time={Horarios.NineAM}>{Horarios.NineAM}</TimeButton>
-                    <TimeButton time={Horarios.TenAM}>{Horarios.TenAM}</TimeButton>
-                    <TimeButton time={Horarios.ElevenAM}>{Horarios.ElevenAM}</TimeButton>
-                    <TimeButton time={Horarios.TwelveAM}>{Horarios.TwelveAM}</TimeButton>
-                    </div>
+                    <TimeButton time={Horarios.FivePM}>{Horarios.FivePM}</TimeButton>
+                    <TimeButton time={Horarios.SixPM}>{Horarios.SixPM}</TimeButton>
+                    <TimeButton time={Horarios.SevenPM}>{Horarios.SevenPM}</TimeButton>
 
+                    </div>
                 </TimeWrapper>
+
+                <NameWrapper>
+                    Cliente
+                    <NameContainer>
+                        <UserIcon />
+                        <input type="text" placeholder="Informe seu nome" id="name"/>
+                    </NameContainer>
+                </NameWrapper>
+
+                <SendBtn>AGENDAR</SendBtn>
             </FormContainer>
-        </HeaderContainer>
+        </AsideContainer>
     )
 }
 
